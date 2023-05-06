@@ -1,5 +1,6 @@
 import "./globals.css";
 import sharedMetaData from "./shared-metadata.js";
+import { Analytics } from "@vercel/analytics/react";
 import { Caveat, Montserrat } from "next/font/google";
 
 const montserrat = Montserrat({
@@ -32,7 +33,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${montserrat.variable} ${caveat.variable}`}>
-      <body>{children}</body>
+      <body>
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }
