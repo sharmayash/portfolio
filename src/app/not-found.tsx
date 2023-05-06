@@ -1,5 +1,4 @@
-// !Issue in next.js 13.4.0, custom 404 pages are not working with next/link.
-// TODO: Move this file to parent app folder once it start working
+// ! Issue in next.js 13.4.0, custom 404 pages are not working with next/link.
 
 import Link from "next/link";
 
