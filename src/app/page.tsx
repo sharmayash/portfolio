@@ -1,5 +1,5 @@
-import Navbar from "./(homepageComponents)/Navbar";
-import ProfileSection from "./(homepageComponents)/ProfileSection";
+import Navbar from "./(Components)/Navbar";
+import ProfileSection from "./(Components)/ProfileSection";
 
 const App: React.FC = () => {
   return (

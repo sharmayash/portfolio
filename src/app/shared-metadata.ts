@@ -1,4 +1,6 @@
-const sharedMetaData = {
+import type { Metadata } from "next";
+
+const sharedMetaData: Metadata = {
   metadataBase: new URL("https://portfolio-sharmayash.vercel.app/"),
   description:
     "Welcome to my portfolio website! I am a skilled software engineer with experience in building responsive and dynamic web apps using modern technologies such as React, Next.js, Node.js, MongoDB, etc. Take a look at my previous projects and feel free to contact me to discuss any potential collaborations or job opportunities.",
@@ -21,11 +23,6 @@ const sharedMetaData = {
     "full stack developer",
     "yash sharma portfolio",
     "yash sharma web portfolio",
-  ],
-
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#57c5b6" },
-    { media: "(prefers-color-scheme: dark)", color: "#57c5b6" },
   ],
 
   openGraph: {

@@ -1,0 +1,31 @@
+#scroll-down-arrow > .arrow-one,
+#scroll-down-arrow > .arrow-two,
+#scroll-down-arrow > .arrow-three {
+  width: 10px;
+  height: 10px;
+  display: block;
+  margin: 6px auto;
+  transform: rotate(-45deg);
+  animation: scrollButtom 1s infinite;
+  border-left: 2px solid hsl(var(--foreground));
+  border-bottom: 2px solid hsl(var(--foreground));
+}
+
+#scroll-down-arrow > .arrow-one {
+  animation-delay: 0.2s;
+}
+#scroll-down-arrow > .arrow-two {
+  animation-delay: 0.4s;
+}
+#scroll-down-arrow > .arrow-three {
+  animation-delay: 0.6s;
+}
+
+@keyframes scrollButtom {
+  0% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 1;
+  }
+}

@@ -1,23 +1,18 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 import styles from "./ProfileSection.module.css";
 import profileImage from "../../../public/yash.webp";
 
 const ProfileSection: React.FC = () => {
-  const [isLoaded, setIsLoaded] = useState(false);
-
-  useEffect(() => {
-    setIsLoaded(true);
-  }, []);
-
   return (
     <div className="relative flex items-center justify-center flex-grow before:absolute before:inset-0 before:bg-repeat before:bg-[url('/bg.svg')]">
-      <div
-        className={`text-white text-center transition-opacity duration-1000 ${
-          isLoaded ? "opacity-100" : "opacity-0"
-        }`}
+      <motion.div
+        transition={{ duration: 0.2 }}
+        animate={{ opacity: 1, scale: 1 }}
+        initial={{ opacity: 0, scale: 0.8 }}
+        className={`text-white text-center`}
       >
         <div className="relative p-2">
           <Image
@@ -32,11 +27,13 @@ const ProfileSection: React.FC = () => {
             className={`${styles.radial_bg} absolute inset-0 rounded-full`}
           />
         </div>
-        <h1 className="text-3xl font-bold mt-4 mb-2 font-caveat">
+        <h1 className="text-3xl text-foreground font-bold mt-4 mb-2 font-caveat">
           Yash Sharma
         </h1>
-        <h2 className="text-xl font-caveat">Software Engineer @ Reelo</h2>
-      </div>
+        <h2 className="text-xl text-foreground font-caveat">
+          Software Engineer @ Reelo
+        </h2>
+      </motion.div>
     </div>
   );
 };

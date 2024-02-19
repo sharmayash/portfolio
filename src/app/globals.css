@@ -2,33 +2,112 @@
 @tailwind components;
 @tailwind utilities;
 
-/* for light mode */
-:root {
-  --primary-rgb-light: #75dcd0;
-  --primary-rgb: #57c5b6;
-  --primary-rgb-dark: #159895;
-  --primary-rgb-darkest: #117674;
-  --secondary-rgb: #8ea7e9;
-  --secondary-rgb-dark: #7286d3;
+@layer base {
+  :root {
+    --background: 0, 0%, 96%;
+    --foreground: 207, 16%, 22%;
 
-  --foreground-rgb: #2e3840; /* text color */
-  --background-rgb: #f5f5f5; /* bg color */
+    --card: 0, 0%, 96%;
+    --card-foreground: 207, 16%, 22%;
+
+    --popover: 0, 0%, 96%;
+    --popover-foreground: 207, 16%, 22%;
+
+    --primary-light: 173, 60%, 66%;
+    --primary: 172, 49%, 56%;
+    --primary-dark: 179, 76%, 34%;
+    --primary-darkest: 179, 75%, 26%;
+    --primary-foreground: 0, 0%, 96%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 172, 49%, 56%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 172, 49%, 56%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0, 0%, 96%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 207, 16%, 22%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 207, 16%, 22%;
+    --foreground: 0, 0%, 96%;
+
+    --card: 207, 16%, 22%;
+    --card-foreground: 0, 0%, 96%;
+
+    --popover: 207, 16%, 22%;
+    --popover-foreground: 0, 0%, 96%;
+
+    --primary-light: 173, 60%, 66%;
+    --primary: 172, 49%, 56%;
+    --primary-dark: 179, 76%, 34%;
+    --primary-darkest: 179, 75%, 26%;
+    --primary-foreground: 0, 0%, 96%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 0, 0%, 96%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 0, 0%, 96%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0, 0%, 96%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
 }
 
-/* for dark mode */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --primary-rgb: #57c5b6;
-    --primary-rgb-dark: #159895;
-    --secondary-rgb: #8ea7e9;
-    --secondary-rgb-dark: #7286d3;
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
 
-    --foreground-rgb: #f5f5f5;
-    --background-rgb: #2e3840;
+/* for light mode */
+/* :root {
+  --primary-rgb-light: hsl(173, 60%, 66%);
+  --primary-rgb: hsl(172, 49%, 56%);
+  --primary-rgb-dark: hsl(179, 76%, 34%);
+  --primary-rgb-darkest: hsl(179, 75%, 26%);
+  --secondary-rgb: hsl(224, 67%, 74%);
+  --secondary-rgb-dark: hsl(228, 52%, 64%); */
+
+/* --foreground-rgb: hsl(207, 16%, 22%); text color */
+/* --background-rgb: hsl(0, 0%, 96%); bg color */
+/* } */
+
+/* for dark mode */
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --primary-rgb: hsl(172, 49%, 56%);
+    --primary-rgb-dark: hsl(179, 76%, 34%);
+    --secondary-rgb: hsl(224, 67%, 74%);
+    --secondary-rgb-dark: hsl(228, 52%, 64%);
+
+    --foreground-rgb: hsl(0, 0%, 96%);
+    --background-rgb: hsl(207, 16%, 22%);
   }
 }
 
 body {
   color: var(--foreground-rgb);
   background: var(--background-rgb);
-}
+} */

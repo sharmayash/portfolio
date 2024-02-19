@@ -1,4 +1,4 @@
-import sharedMetaData from "../shared-metadata.js";
+import sharedMetaData from "../shared-metadata";
 
 export const metadata = {
   ...sharedMetaData,

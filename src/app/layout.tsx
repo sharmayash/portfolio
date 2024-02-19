@@ -1,7 +1,9 @@
 import "./globals.css";
-import sharedMetaData from "./shared-metadata.js";
+import type { Viewport } from "next";
+import sharedMetaData from "./shared-metadata";
 import { Analytics } from "@vercel/analytics/react";
 import { Caveat, Montserrat } from "next/font/google";
+import { ThemeProvider } from "@/components/common/ThemeProvider";
 
 const montserrat = Montserrat({
   display: "swap",
@@ -16,6 +18,17 @@ const caveat = Caveat({
   variable: "--font-caveat",
   weight: ["400", "500", "600", "700"],
 });
+
+export const viewport: Viewport = {
+  initialScale: 1,
+  maximumScale: 1,
+  colorScheme: "dark",
+  width: "device-width",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#57c5b6" },
+    { media: "(prefers-color-scheme: dark)", color: "#57c5b6" },
+  ],
+};
 
 export const metadata = {
   ...sharedMetaData,
@@ -33,9 +46,16 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${montserrat.variable} ${caveat.variable}`}>
-      <body>
-        {children}
-        <Analytics />
+      <body className="scroll-smooth">
+        <ThemeProvider
+          enableSystem
+          attribute="class"
+          defaultTheme="system"
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
+        {process.env.NODE_ENV === "production" && <Analytics />}
       </body>
     </html>
   );
