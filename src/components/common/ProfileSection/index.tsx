@@ -3,7 +3,6 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import styles from "./ProfileSection.module.css";
-import profileImage from "../../../public/yash.webp";
 
 const ProfileSection: React.FC = () => {
   return (
@@ -16,11 +15,12 @@ const ProfileSection: React.FC = () => {
       >
         <div className="relative p-2">
           <Image
+            priority
             width={256}
             height={256}
             alt="Profile"
             quality={100}
-            src={profileImage}
+            src="/yash-sharma-passport.webp"
             className="relative z-10 mx-auto w-48 h-48 rounded-full"
           />
           <div

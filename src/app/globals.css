@@ -13,13 +13,14 @@
     --popover: 0, 0%, 96%;
     --popover-foreground: 207, 16%, 22%;
 
-    --primary-light: 173, 60%, 66%;
+    --primary-light: 173, 50%, 60%;
     --primary: 172, 49%, 56%;
     --primary-dark: 179, 76%, 34%;
     --primary-darkest: 179, 75%, 26%;
     --primary-foreground: 0, 0%, 96%;
 
     --secondary: 210 40% 96.1%;
+    --secondary-dark: 228, 52%, 64%;
     --secondary-foreground: 172, 49%, 56%;
 
     --muted: 210 40% 96.1%;

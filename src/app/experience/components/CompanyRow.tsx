@@ -9,10 +9,12 @@ import { shimmer, toBase64 } from "@/utils/constants";
 
 const CompanyRow = ({ card }: { card: CompanyProps }) => {
   return (
-    <div id={card?.id} className="my-16 py-16 font-montserrat">
-      <div className="m-auto max-w-4xl text-center">
-        <h2 className="mb-4 text-3xl font-medium">{card.company_name}</h2>
-        <p className="m-auto mb-24 max-w-2xl">{card.company_desc}</p>
+    <div id={card?.id} className="my-8 md:my-16 py-8 md:py-16 font-montserrat">
+      <div className="m-auto max-w-4xl text-sm md:text-base text-center">
+        <h2 className="mb-4 text-xl md:text-3xl font-medium">
+          {card.company_name}
+        </h2>
+        <p className="m-auto mb-6 md:mb-24 max-w-2xl">{card.company_desc}</p>
         <div className="gap-4 flex items-center justify-between">
           <p>
             <span className="font-semibold">Position:</span> {card.position}
@@ -37,8 +39,9 @@ const CompanyRow = ({ card }: { card: CompanyProps }) => {
             scroll={false}
             key={project.id}
             href={`/experience/${project?.id}`}
+            title={`Click to know more about the ${project.project_name_1} ${project.project_name_2}`}
           >
-            <Atropos className="relative w-80 h-60 cursor-pointer">
+            <Atropos className="relative w-72 h-52 sm:w-80 sm:h-60 cursor-pointer">
               <Image
                 fill
                 loading="lazy"
@@ -65,13 +68,13 @@ const CompanyRow = ({ card }: { card: CompanyProps }) => {
               <div className="relative z-10 w-full h-full flex flex-col items-center justify-center font-caveat">
                 <span
                   data-atropos-offset="10"
-                  className="text-3xl font-medium text-white"
+                  className="text-2xl sm:text-3xl font-medium text-white"
                 >
                   {project.project_name_1}
                 </span>
                 <span
                   data-atropos-offset="20"
-                  className="text-3xl font-medium text-white"
+                  className="text-2xl sm:text-3xl font-medium text-white"
                 >
                   {project.project_name_2}
                 </span>
@@ -83,4 +86,5 @@ const CompanyRow = ({ card }: { card: CompanyProps }) => {
     </div>
   );
 };
+
 export default CompanyRow;

@@ -1,7 +1,5 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
-import { useRouter, usePathname } from "next/navigation";
 import {
   Drawer,
   DrawerTitle,
@@ -10,6 +8,14 @@ import {
   DrawerDescription,
   DrawerFooter,
 } from "@/components/ui/drawer";
+import { Button } from "@/components/ui/button";
+import { experiences } from "@/utils/constants";
+import { useRouter, usePathname } from "next/navigation";
+
+const getProjectDetails = (projectKey: string) => {
+  const projectList = experiences?.map((company) => company?.projects)?.flat();
+  return projectList?.find((project) => project?.id === projectKey);
+};
 
 const ProjectPage = ({
   params: { project_key: projectKey },
@@ -19,67 +25,49 @@ const ProjectPage = ({
   const router = useRouter();
   const pathname = usePathname();
 
+  const projectDetails = getProjectDetails(projectKey);
   const isProjectDrawerOpen = pathname?.includes(projectKey);
 
-  const handleClose = () => router.replace("/experience", { scroll: false, });
+  const handleClose = () => router.replace("/experience", { scroll: false });
+  const handleOpenChange = (isOpen: Boolean) => (isOpen ? {} : handleClose());
 
   return (
-    <Drawer open={isProjectDrawerOpen} onClose={handleClose}>
+    <Drawer open={isProjectDrawerOpen} onOpenChange={handleOpenChange}>
       <DrawerContent>
-        <div className="mx-auto w-full max-w-sm">
+        <div className="mx-auto w-full max-w-5xl">
           <DrawerHeader>
-            <DrawerTitle>{projectKey}</DrawerTitle>
-            <DrawerDescription>Set your daily activity goal.</DrawerDescription>
+            <DrawerTitle>
+              {projectDetails?.project_name_1} {projectDetails?.project_name_2}
+            </DrawerTitle>
+            <DrawerDescription>
+              {projectDetails?.project_description}
+            </DrawerDescription>
+            {projectDetails?.live_link ? (
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href={projectDetails?.live_link}
+                className="mt-2 text-primary font-montserrat font-medium"
+              >
+                Live link
+              </a>
+            ) : (
+              <></>
+            )}
           </DrawerHeader>
-          {/* <div className="p-4 pb-0">
-            <div className="flex items-center justify-center space-x-2">
-              <Button
-                variant="outline"
-                size="icon"
-                className="h-8 w-8 shrink-0 rounded-full"
-                onClick={() => onClick(-10)}
-                disabled={goal <= 200}
-              >
-                <Minus className="h-4 w-4" />
-                <span className="sr-only">Decrease</span>
-              </Button>
-              <div className="flex-1 text-center">
-                <div className="text-7xl font-bold tracking-tighter">
-                  {goal}
-                </div>
-                <div className="text-[0.70rem] uppercase text-muted-foreground">
-                  Calories/day
-                </div>
-              </div>
-              <Button
-                variant="outline"
-                size="icon"
-                className="h-8 w-8 shrink-0 rounded-full"
-                onClick={() => onClick(10)}
-                disabled={goal >= 400}
-              >
-                <Plus className="h-4 w-4" />
-                <span className="sr-only">Increase</span>
-              </Button>
-            </div>
-            <div className="mt-3 h-[120px]">
-              <ResponsiveContainer width="100%" height="100%">
-                <BarChart data={data}>
-                  <Bar
-                    dataKey="goal"
-                    style={
-                      {
-                        fill: "hsl(var(--foreground))",
-                        opacity: 0.9,
-                      } as React.CSSProperties
-                    }
-                  />
-                </BarChart>
-              </ResponsiveContainer>
-            </div>
-          </div> */}
+          <div className="p-4 px-8 pb-0">
+            <ul className="list-disc">
+              {projectDetails?.project_points?.map((point, i) => (
+                <li key={i} className="text-sm">
+                  {point}
+                </li>
+              ))}
+            </ul>
+          </div>
           <DrawerFooter>
-            <Button onClick={handleClose}>Close</Button>
+            <Button onClick={handleClose} variant="default">
+              Close
+            </Button>
           </DrawerFooter>
         </div>
       </DrawerContent>
