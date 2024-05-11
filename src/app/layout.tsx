@@ -1,7 +1,6 @@
 import "./globals.css";
 import type { Viewport } from "next";
 import sharedMetaData from "./shared-metadata";
-import { Analytics } from "@vercel/analytics/react";
 import { Caveat, Montserrat } from "next/font/google";
 import { ThemeProvider } from "@/components/common/ThemeProvider";
 
@@ -55,7 +54,6 @@ export default function RootLayout({
         >
           {children}
         </ThemeProvider>
-        {process.env.NODE_ENV === "production" && <Analytics />}
       </body>
     </html>
   );
