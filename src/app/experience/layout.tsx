@@ -1,4 +1,5 @@
-import sharedMetaData from "../shared-metadata.js";
+import { ReactNode } from "react";
+import sharedMetaData from "../shared-metadata";
 
 export const metadata = {
   ...sharedMetaData,
@@ -6,8 +7,16 @@ export const metadata = {
   description: "Hey there, you can view my experiences on this webpage.",
 };
 
-const ExperienceLayout = ({ children }: { children: React.ReactNode }) => {
-  return <section>{children}</section>;
+const ExperienceLayout = (props: {
+  children: ReactNode;
+  projects: ReactNode;
+}) => {
+  return (
+    <section>
+      {props.children}
+      {props.projects}
+    </section>
+  );
 };
 
 export default ExperienceLayout;

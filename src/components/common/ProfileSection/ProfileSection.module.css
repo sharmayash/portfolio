@@ -1,9 +1,9 @@
 .radial_bg {
   background-image: linear-gradient(
-    var(--primary-rgb-light) 0%,
-    var(--primary-rgb) 33%,
-    var(--primary-rgb-dark) 67%,
-    var(--primary-rgb-darkest) 100%
+    hsl(var(--primary-light)) 0%,
+    hsl(var(--primary)) 33%,
+    hsl(var(--primary-dark)) 67%,
+    hsl(var(--primary-darkest)) 100%
   );
 
   animation-duration: 5s;
