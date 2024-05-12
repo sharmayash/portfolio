@@ -29,7 +29,7 @@ const Contact: React.FC = () => {
             <AnimatedTooltip items={socials} />
           </div>
           <div className="font-extralight text-xl md:text-3xl dark:text-neutral-200">
-            <a href="mailto:sharmayash44ys@gmail.com">
+            <a href="mailto:sharmayash98ys@gmail.com">
               sharmayash98ys@gmail.com
             </a>
           </div>

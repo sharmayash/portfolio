@@ -41,7 +41,7 @@ const CompanyRow = ({ card }: { card: CompanyProps }) => {
             href={`/experience/${project?.id}`}
             title={`Click to know more about the ${project.project_name_1} ${project.project_name_2}`}
           >
-            <Atropos className="relative w-72 h-52 sm:w-80 sm:h-60 cursor-pointer">
+            <Atropos className="relative w-56 h-40 sm:w-80 sm:h-60 cursor-pointer">
               <Image
                 fill
                 loading="lazy"

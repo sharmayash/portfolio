@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 const sharedMetaData: Metadata = {
-  metadataBase: new URL("https://portfolio-sharmayash.vercel.app/"),
+  metadataBase: new URL("https://yash98.netlify.app"),
   description:
     "Welcome to my portfolio website! I am a skilled software engineer with experience in building responsive and dynamic web apps using modern technologies such as React, Next.js, Node.js, MongoDB, etc. Take a look at my previous projects and feel free to contact me to discuss any potential collaborations or job opportunities.",
   keywords: [
@@ -29,15 +29,15 @@ const sharedMetaData: Metadata = {
     title: "Yash Sharma | Software engineer",
     description:
       "Welcome to my portfolio website! I am a skilled software engineer with experience in building responsive and dynamic web apps using modern technologies such as React, Next.js, Node.js, MongoDB, etc. Take a look at my previous projects and feel free to contact me to discuss any potential collaborations or job opportunities.",
-    url: "https://sharmayash.vercel.app",
+    url: "https://yash98.netlify.app",
     siteName: "Yash Sharma",
-    // images: [
-    //   {
-    //     url: "https://nextjs.org/og.png",
-    //     width: 800,
-    //     height: 600,
-    //   },
-    // ],
+    images: [
+      {
+        url: "/og-thumb.png",
+        width: 512,
+        height: 512,
+      },
+    ],
     locale: "en-US",
     type: "website",
   },

@@ -20,7 +20,7 @@ const caveat = Caveat({
 
 export const viewport: Viewport = {
   initialScale: 1,
-  maximumScale: 1,
+  maximumScale: 5,
   colorScheme: "dark",
   width: "device-width",
   themeColor: [
